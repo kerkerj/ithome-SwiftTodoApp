@@ -15,6 +15,9 @@
 		029B986719F58B9800253035 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B986519F58B9800253035 /* CustomTableViewCell.xib */; };
 		029B986A19F58EA700253035 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B986819F58EA700253035 /* ShowViewController.swift */; };
 		029B986B19F58EA700253035 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B986919F58EA700253035 /* ShowViewController.xib */; };
+		029B986E19F594FA00253035 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B986C19F594FA00253035 /* UpdateViewController.swift */; };
+		029B986F19F594FA00253035 /* UpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B986D19F594FA00253035 /* UpdateViewController.xib */; };
+		029B987119F5999600253035 /* TodoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B987019F5999600253035 /* TodoProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		029B986519F58B9800253035 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		029B986819F58EA700253035 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		029B986919F58EA700253035 /* ShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
+		029B986C19F594FA00253035 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		029B986D19F594FA00253035 /* UpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateViewController.xib; sourceTree = "<group>"; };
+		029B987019F5999600253035 /* TodoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,9 @@
 				029B986519F58B9800253035 /* CustomTableViewCell.xib */,
 				029B986819F58EA700253035 /* ShowViewController.swift */,
 				029B986919F58EA700253035 /* ShowViewController.xib */,
+				029B986C19F594FA00253035 /* UpdateViewController.swift */,
+				029B986D19F594FA00253035 /* UpdateViewController.xib */,
+				029B987019F5999600253035 /* TodoProtocol.swift */,
 			);
 			path = "ithome-TODOAPP";
 			sourceTree = "<group>";
@@ -201,6 +210,7 @@
 				029B986719F58B9800253035 /* CustomTableViewCell.xib in Resources */,
 				029B986B19F58EA700253035 /* ShowViewController.xib in Resources */,
 				029B984C19F5838900253035 /* Images.xcassets in Resources */,
+				029B986F19F594FA00253035 /* UpdateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +232,8 @@
 				029B984719F5838900253035 /* ViewController.swift in Sources */,
 				029B984519F5838900253035 /* AppDelegate.swift in Sources */,
 				029B986A19F58EA700253035 /* ShowViewController.swift in Sources */,
+				029B986E19F594FA00253035 /* UpdateViewController.swift in Sources */,
+				029B987119F5999600253035 /* TodoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

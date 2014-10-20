@@ -11,6 +11,7 @@ import UIKit
 class ShowViewController: UIViewController {
     
     var index: Int!
+    var id: String!
     var content: String!
     
     @IBOutlet var indexLabel: UILabel!
@@ -18,27 +19,23 @@ class ShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         indexLabel.text = "\(index)"
         contentLabel.text = content
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("editTodo"))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func editTodo() {
+        var editViewContronller = UpdateViewController(nibName: "UpdateViewController", bundle: nil)
+        editViewContronller.from = "edit"
+        editViewContronller.content = content
+        editViewContronller.index = index
+        
+        self.navigationController?.pushViewController(editViewContronller, animated: true)
     }
-    */
-
 }

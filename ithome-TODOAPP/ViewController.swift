@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UpdateTODOlistDelegate {
     
     var fakeData = [[String:String]]()
     var tableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Done, target: self, action: Selector("pushToAddTODO"))
         
         fakeData = [
             ["id": "1", "content": "A"],
@@ -33,7 +34,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK:- ??
+    
+    func pushToAddTODO(){
+        var addViewController = UpdateViewController(nibName: "UpdateViewController", bundle: nil)
+        addViewController.from = "add"
+        addViewController.delegate = self
+        
+        self.navigationController?.pushViewController(addViewController, animated: true)
     }
     
     // MARK:- table view
@@ -58,6 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var showViewController = ShowViewController(nibName: "ShowViewController", bundle: nil)
         showViewController.index = indexPath.row
+        showViewController.id = fakeData[indexPath.row]["id"]
         showViewController.content = fakeData[indexPath.row]["content"]
         
         // 回復非選取狀態
@@ -84,6 +95,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addButtonWithTitle("Ok")
         alert.show()
     }
+    
+    // MARK: - Delegate
+    
+    func addData(id: String, content: String) {
+        self.fakeData.append(["id": id, "content": content])
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            // must be "tableView!" not "tableView?"
+            self.tableView!.reloadData()
+        })
+    }
+    
 
 }
 
