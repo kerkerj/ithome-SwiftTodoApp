@@ -13,6 +13,8 @@
 		029B985B19F5838900253035 /* ithome_TODOAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B985A19F5838900253035 /* ithome_TODOAPPTests.swift */; };
 		029B986619F58B9800253035 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B986419F58B9800253035 /* CustomTableViewCell.swift */; };
 		029B986719F58B9800253035 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B986519F58B9800253035 /* CustomTableViewCell.xib */; };
+		029B986A19F58EA700253035 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B986819F58EA700253035 /* ShowViewController.swift */; };
+		029B986B19F58EA700253035 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B986919F58EA700253035 /* ShowViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		029B985A19F5838900253035 /* ithome_TODOAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ithome_TODOAPPTests.swift; sourceTree = "<group>"; };
 		029B986419F58B9800253035 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		029B986519F58B9800253035 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		029B986819F58EA700253035 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		029B986919F58EA700253035 /* ShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				029B984219F5838900253035 /* Supporting Files */,
 				029B986419F58B9800253035 /* CustomTableViewCell.swift */,
 				029B986519F58B9800253035 /* CustomTableViewCell.xib */,
+				029B986819F58EA700253035 /* ShowViewController.swift */,
+				029B986919F58EA700253035 /* ShowViewController.xib */,
 			);
 			path = "ithome-TODOAPP";
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029B986719F58B9800253035 /* CustomTableViewCell.xib in Resources */,
+				029B986B19F58EA700253035 /* ShowViewController.xib in Resources */,
 				029B984C19F5838900253035 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +221,7 @@
 				029B986619F58B9800253035 /* CustomTableViewCell.swift in Sources */,
 				029B984719F5838900253035 /* ViewController.swift in Sources */,
 				029B984519F5838900253035 /* AppDelegate.swift in Sources */,
+				029B986A19F58EA700253035 /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

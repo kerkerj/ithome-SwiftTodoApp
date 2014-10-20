@@ -56,9 +56,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var showViewController = ShowViewController(nibName: "ShowViewController", bundle: nil)
+        showViewController.index = indexPath.row
+        showViewController.content = fakeData[indexPath.row]["content"]
         
         // 回復非選取狀態
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.navigationController?.pushViewController(showViewController, animated: true)
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+
+        self.fakeData.removeAtIndex(indexPath.row)
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            // must be "tableView!" not "tableView?"
+            self.tableView!.reloadData()
+        })
+
+        let alert = UIAlertView()
+        alert.title = "Alert"
+        alert.message = "Deleted!"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+
 }
 
