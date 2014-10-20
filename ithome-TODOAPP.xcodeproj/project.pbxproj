@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		029B984519F5838900253035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B984419F5838900253035 /* AppDelegate.swift */; };
 		029B984719F5838900253035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B984619F5838900253035 /* ViewController.swift */; };
-		029B984A19F5838900253035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029B984819F5838900253035 /* Main.storyboard */; };
 		029B984C19F5838900253035 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029B984B19F5838900253035 /* Images.xcassets */; };
-		029B984F19F5838900253035 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B984D19F5838900253035 /* LaunchScreen.xib */; };
 		029B985B19F5838900253035 /* ithome_TODOAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B985A19F5838900253035 /* ithome_TODOAPPTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,9 +28,7 @@
 		029B984319F5838900253035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029B984419F5838900253035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029B984619F5838900253035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		029B984919F5838900253035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		029B984B19F5838900253035 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		029B984E19F5838900253035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		029B985419F5838900253035 /* ithome-TODOAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ithome-TODOAPPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029B985919F5838900253035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029B985A19F5838900253035 /* ithome_TODOAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ithome_TODOAPPTests.swift; sourceTree = "<group>"; };
@@ -79,9 +75,7 @@
 			children = (
 				029B984419F5838900253035 /* AppDelegate.swift */,
 				029B984619F5838900253035 /* ViewController.swift */,
-				029B984819F5838900253035 /* Main.storyboard */,
 				029B984B19F5838900253035 /* Images.xcassets */,
-				029B984D19F5838900253035 /* LaunchScreen.xib */,
 				029B984219F5838900253035 /* Supporting Files */,
 			);
 			path = "ithome-TODOAPP";
@@ -192,8 +186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				029B984A19F5838900253035 /* Main.storyboard in Resources */,
-				029B984F19F5838900253035 /* LaunchScreen.xib in Resources */,
 				029B984C19F5838900253035 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,25 +226,6 @@
 			targetProxy = 029B985519F5838900253035 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		029B984819F5838900253035 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				029B984919F5838900253035 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		029B984D19F5838900253035 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				029B984E19F5838900253035 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		029B985C19F5838900253035 /* Debug */ = {
@@ -336,7 +309,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "ithome-TODOAPP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -346,7 +321,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "ithome-TODOAPP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
