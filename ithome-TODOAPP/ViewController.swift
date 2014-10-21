@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell = objects[0] as? CustomTableViewCell
         }
         
-        cell!.textLabel?.text = (self.fakeData[indexPath.row])["content"]
+        cell!.textLabel.text = (self.fakeData[indexPath.row])["content"]
         
         return cell!
     }
