@@ -131,19 +131,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-
-        self.fakeData.removeAtIndex(indexPath.row)
         
-        dispatch_async(dispatch_get_main_queue(), {
-            // must be "tableView!" not "tableView?"
-            self.tableView!.reloadData()
-        })
-
-        let alert = UIAlertView()
-        alert.title = "Alert"
-        alert.message = "Deleted!"
-        alert.addButtonWithTitle("Ok")
-        alert.show()
+        api.deleteTodoList({data, err -> Void in
+            let alert = UIAlertView()
+            alert.title = "Alert"
+            alert.addButtonWithTitle("Ok")
+            
+            if (err != nil) {
+                alert.message = "Failed to delete: \(err)"
+                alert.show()
+            } else {
+                alert.message = "ok!"
+                
+                self.fakeData.removeAtIndex(indexPath.row)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    // must be "tableView!" not "tableView?"
+                    alert.show()
+                    self.tableView!.reloadData()
+                })
+            }
+            }, todoId: fakeData[indexPath.row]["_id"]!)
     }
     
     // MARK: - Delegate

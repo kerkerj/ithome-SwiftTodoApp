@@ -102,4 +102,36 @@ class RestApi {
         
         task.resume()
     }
+    
+    func deleteTodoList(completionHandler: ((NSDictionary!, NSError!) -> Void)!, todoId: String) {
+        var session = NSURLSession.sharedSession()
+        
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.158:3000/user/kerkerj/todos/\(todoId)")!)
+        request.HTTPMethod = "DELETE"
+        
+        var err: NSError?
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(self.API_key, forHTTPHeaderField: "API-Key")
+        
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            if (error != nil) {
+                return completionHandler(nil, error)
+            }
+            
+            var error: NSError?
+            let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+            
+            println(json)
+            
+            if (error != nil) {
+                return completionHandler(nil, error)
+            } else {
+                return completionHandler(json, nil)
+            }
+        })
+        
+        task.resume()
+    }
+
 }
