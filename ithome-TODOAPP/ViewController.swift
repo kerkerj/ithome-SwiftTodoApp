@@ -12,17 +12,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var fakeData = [[String:String]]()
     var tableView: UITableView?
+    var api: RestApi = RestApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Done, target: self, action: Selector("pushToAddTODO"))
         
-        fakeData = [
-            ["id": "1", "content": "A"],
-            ["id": "2", "content": "B"],
-            ["id": "3", "content": "C"],
-        ]
+//        fakeData = [
+//            ["id": "1", "content": "A"],
+//            ["id": "2", "content": "B"],
+//            ["id": "3", "content": "C"],
+//        ]
         self.view.backgroundColor = UIColor.yellowColor()
         
         self.tableView = UITableView(frame: self.view.frame)
@@ -34,6 +35,55 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        api.getTodoList({data, error -> Void in
+            if error != nil {
+                dispatch_async(dispatch_get_main_queue(), {
+                    let alert = UIAlertView()
+                    alert.title = "Yoooooooooooooooo"
+                    alert.message = "Get list faild, maybe check your network: \(error)"
+                    alert.addButtonWithTitle("ok")
+                    alert.delegate = self
+                    alert.show()
+                    println(error)
+                })
+            }
+            
+            if (data != nil) {
+                
+                var tmpArr = [[String: String]]()
+                
+                for item in data {
+                    var _id = item["_id"] as String
+                    var content = item["content"] as String
+                    var dic = [String: String]()
+                    
+                    dic["_id"] = _id
+                    dic["content"] = content
+                    
+                    tmpArr.append(dic)
+                }
+                
+                self.fakeData = tmpArr
+                
+                println(self.fakeData)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    // must be "tableView!" not "tableView?"
+                    self.tableView!.reloadData()
+                })
+                
+            }
+        })
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            // must be "tableView!" not "tableView?"
+            self.tableView!.reloadData()
+        })
     }
     
     // MARK:- ??
@@ -68,7 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var showViewController = ShowViewController(nibName: "ShowViewController", bundle: nil)
         showViewController.index = indexPath.row
-        showViewController.id = fakeData[indexPath.row]["id"]
+        showViewController.id = fakeData[indexPath.row]["_id"]
         showViewController.content = fakeData[indexPath.row]["content"]
         
         // 回復非選取狀態

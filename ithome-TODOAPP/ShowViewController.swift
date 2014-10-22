@@ -35,6 +35,7 @@ class ShowViewController: UIViewController {
         editViewContronller.from = "edit"
         editViewContronller.content = content
         editViewContronller.index = index
+        editViewContronller.id = self.id
         
         self.navigationController?.pushViewController(editViewContronller, animated: true)
     }

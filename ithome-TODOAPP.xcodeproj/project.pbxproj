@@ -18,6 +18,7 @@
 		029B986E19F594FA00253035 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B986C19F594FA00253035 /* UpdateViewController.swift */; };
 		029B986F19F594FA00253035 /* UpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029B986D19F594FA00253035 /* UpdateViewController.xib */; };
 		029B987119F5999600253035 /* TodoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B987019F5999600253035 /* TodoProtocol.swift */; };
+		02CBAA5619F6E89500BA89F3 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CBAA5519F6E89500BA89F3 /* RestApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		029B986C19F594FA00253035 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		029B986D19F594FA00253035 /* UpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateViewController.xib; sourceTree = "<group>"; };
 		029B987019F5999600253035 /* TodoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoProtocol.swift; sourceTree = "<group>"; };
+		02CBAA5519F6E89500BA89F3 /* RestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				029B986C19F594FA00253035 /* UpdateViewController.swift */,
 				029B986D19F594FA00253035 /* UpdateViewController.xib */,
 				029B987019F5999600253035 /* TodoProtocol.swift */,
+				02CBAA5519F6E89500BA89F3 /* RestApi.swift */,
 			);
 			path = "ithome-TODOAPP";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				029B986619F58B9800253035 /* CustomTableViewCell.swift in Sources */,
 				029B984719F5838900253035 /* ViewController.swift in Sources */,
 				029B984519F5838900253035 /* AppDelegate.swift in Sources */,
+				02CBAA5619F6E89500BA89F3 /* RestApi.swift in Sources */,
 				029B986A19F58EA700253035 /* ShowViewController.swift in Sources */,
 				029B986E19F594FA00253035 /* UpdateViewController.swift in Sources */,
 				029B987119F5999600253035 /* TodoProtocol.swift in Sources */,
@@ -410,6 +414,7 @@
 				029B986019F5838900253035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		029B986119F5838900253035 /* Build configuration list for PBXNativeTarget "ithome-TODOAPPTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +423,7 @@
 				029B986319F5838900253035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

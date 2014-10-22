@@ -12,9 +12,11 @@ class UpdateViewController: UIViewController {
 
     var from: String!
     var delegate: UpdateTODOlistDelegate!
+    var api = RestApi()
     
     var index: Int!
     var content: String!
+    var id: String!
     
     @IBOutlet var textField: UITextField!
     
@@ -34,10 +36,30 @@ class UpdateViewController: UIViewController {
     
     func save() {
         if from == "add" {
-            delegate.addData("g6", content: self.textField.text)
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            api.addTodoList({data, error -> Void in
+                if data == nil {
+                    println(error)
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    println("done")
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                })
+            }, content: self.textField.text)
+
         } else if from == "edit" {
             println("Save edited data")
+            api.updateTodoList({data, error -> Void in
+                if data == nil {
+                    println(error)
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    println("done")
+                    self.navigationController!.popToRootViewControllerAnimated(true)
+                })
+                
+            }, content: self.textField.text, todoId: self.id)
         }
     }
 }
